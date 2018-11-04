@@ -4,7 +4,7 @@ from user import User, Info
 
 def register_user(username, password):
     '''
-    creating a function to create users to the system
+    creating a function to create users to the application
     '''
     new_user = User(username, password)
     return new_user
@@ -13,7 +13,7 @@ def save_user(user):
     '''
     Created a user function to save the new user
     '''
-    User.save_user(user)
+    User.register(user)
 
 def check_user(username, password):
     '''
@@ -42,48 +42,77 @@ def clipboard_info():
     return Info.clipboard_info(info_details)
 
 def main():
-    print("**"*30)
-    print("Choose one option below \n 1. Create account \n 2. sign in \n 3. quit \n")
-    
-    choice = input()
-    if choice == "3":
-        sys.exit()
+    while True:
+        print("\n")
+        print("**"*50)
+        print("******Welcome to password locker******")
+        print("\n")
+        print("Choose one option below \n 1. Create account \n 2. sign in \n 3. quit \n")
 
-    elif choice == "1":
-        print("**"*30)
-        print("Create a new account")
-        print ("\n")
-        username = input('Create a username')
-        password= input("Create password")
-        save_user(register_user(username, password))
-        print("Account created successfully!!")
+        choice = input("Enter choice : \n")
+        if choice == "3":
+            break
 
-    elif choice == "2":
-        print("**"*30)
-        print("Log in by entering your account credentials")
-        username = ("Enter your username")
-        password = ("Enter your password")
-        user_exist = check_user(username, password)
-            if user_exist == username :
+        elif choice == "1":
+            print("**"*50)
+            print("Create a new account")
+            print ("\n")
+            username = input('Create a username  ')
+            password= input("Create password  ")
+            save_user(register_user(username, password))
+            print("Account created successfully!!")
+
+        elif choice == "2":
+            print("**"*50)
+            print("Log in by entering your account credentials")
+            username = input("Enter your username : \n")
+            password = input("Enter your password : \n")
+            user_exists = check_user(username, password)
+           
+            if user_exists == username :
                 print ("\n")
                 print("Welcome to password Locker")
+               
                 while True:
-                    print("**"*30)
+                    print("\n")
+                    print("**"*50)
                     print("Choose an option")
                     print("1. Create login information \n 2. copy login infomation \n 3. Exit ")
                     user_Choice = input("Enter choice : ")
+                   
                     if user_Choice == "3":
                         print(f'Goodbye {username}')
-                        sys.exit()
+                        break
+                    
                     elif user_Choice == "1":
                         print("\n")
                         print("Enter your infomation")
-                        account_name = input("Enter account name")
-                        info_details = input("Enter the site name")
-                        password = input("Enter password for site")
-                save_info(create_info(username,account_name,info_details, password))
-                print("\n")
-                print("Credentials created successfully.")
+                        account_name = input("Enter account name : \n")
+                        info_details = input("Enter the site name : \n")
+                        password = input("Enter password for site: \n")
+                    save_info(create_info(username,account_name,info_details, password))
+                    print("\n")
+                    print("Credentials created successfully.")
+                    
+                    elif user_Choice == "2":
+                        print("\n")
+                        print("**"*500)
+                        choosen_info = input("Enter the site account to copy your info from. \n")
+                        copy_info(choosen_info)
+                        print("\n")
+                    
+                    else:
+                        print("Enter correct option and try again!!!")
+
+
+            else:
+                print("Wrong info entered")
+        else:
+            print("wrong info entered")
+
+if __name__ == '__main__':
+	main()
+
 
 
 
