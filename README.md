@@ -20,7 +20,7 @@ As a user I would like:
 ### Cloning
 * In your terminal:
         
-      ###  $ git clone https://github.com/ClintonClin/password-locker
+        $ git clone https://github.com/ClintonClin/password-locker
         $ cd Password-Locker
 
 ## Running the Application
