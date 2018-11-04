@@ -1,5 +1,6 @@
 #import pyperclip
 import random
+import string
 
 global user_list
 class User:
@@ -14,7 +15,7 @@ class User:
         self.password = password
 
     def register(self):
-       User.User_list.append(self)
+       User.user_list.append(self)
 
 class Info:
     '''
@@ -43,7 +44,7 @@ class Info:
         find_info = Info.find_by_info_details(info_details)
         return pyperclip.copy(finf_info.password)
 
-    def check_User(cls, username, password):
+    def check_User( username, password):
         '''
         method for checking user if exists in the user list array
         '''
@@ -52,6 +53,19 @@ class Info:
             if (user.username == username and user.password == password):
                 super_user = user.username
             return super_user
+        
 
+    def find_by_site_name(cls, info_details):
+        '''
+        method that takes in a site name and gives out info matching site name
+        '''
+        for information in cls.info_list:
+            if information.info_details == info_details:
+                return information
     
-    
+    def copy_info(cls, info_details):
+        '''
+        class method for copying info
+        '''
+        find_info = Info.find_by_site_name(info_details)
+        return pyperclip.copy(find_info.password)
