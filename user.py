@@ -15,4 +15,10 @@ class User:
 
         def register(self)
        User.User_list.append(self)
-       
+
+class Info:
+    '''
+    Class to create new infomation of a user
+    '''
+    info_list = []
+    users_info = []
