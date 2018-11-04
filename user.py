@@ -1,4 +1,4 @@
-import pyperclip
+#import pyperclip
 import random
 
 global user_list
@@ -42,5 +42,16 @@ class Info:
         '''
         find_info = Info.find_by_info_details(info_details)
         return pyperclip.copy(finf_info.password)
+
+    def check_User(cls, username, password):
+        '''
+        method for checking user if exists in the user list array
+        '''
+        super_user = ""
+        for user in User.user_list:
+            if (user.username == username and user.password == password):
+                super_user = user.username
+            return super_user
+
     
     
