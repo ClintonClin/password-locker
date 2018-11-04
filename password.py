@@ -28,3 +28,10 @@ def save_info(info)
     '''
     Info.save_info(info)
 
+def clipboard_info()
+    '''
+    function that copies my info to the clipboard
+    '''
+    return Info.clipboard_info(info_details)
+
+
