@@ -13,7 +13,7 @@ class User:
         self.username = username
         self.password = password
 
-        def register(self)
+    def register(self):
        User.User_list.append(self)
 
 class Info:
@@ -30,13 +30,13 @@ class Info:
         self.info_details = info_details
         self.password = password
 
-    def save_info(self)
+    def save_info(self):
         '''
         created a function to new info of a user
         '''
         Info.info_list.append(self)
 
-    def clipboard_info(cls, info_details)
+    def clipboard_info(cls, info_details):
         '''
         method that copies the user info to the clipboard
         '''
