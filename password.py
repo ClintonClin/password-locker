@@ -1,29 +1,11 @@
 import random  
-from user import User
-from credentials import Credentials
-print("__________WELCOME TO PASSWORD-LOCKER__________")
+from user import User, Info
+import pyperclip
 
-def createAccount(userName, passkey): 
-    
-    new_user = User(uname, pword)
-   
+def register_user(username, password)
+    '''
+    creating a function to create users to the system
+    '''
+    new_user = User(username, password)
     return new_user
-
-def login(login):
-
-
-if username != username and password != password:
-    print("Wrong credentials. Try again!!!")
-else:
-     print(" Select one option:\n 1. Store your credentials \n 2. Generate password ")
-
-choice = int(input())
-if choice == 1:
-        print("Enter account name e.g Facebook")
-        account = input()
-        print("Enter password to store of given account")
-        password = input()
     
-
-
-
