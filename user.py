@@ -22,3 +22,10 @@ class Info:
     '''
     info_list = []
     users_info = []
+
+    @classmethod
+    def __init__(self, username_name, account_name, info_details, password):
+        self.username_name = username_name
+        self.account_name = account_name
+        self.info_details = info_details
+        self.password = password
