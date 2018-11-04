@@ -35,4 +35,12 @@ class Info:
         created a function to new info of a user
         '''
         Info.info_list.append(self)
-        
+
+    def clipboard_info(cls, info_details)
+        '''
+        method that copies the user info to the clipboard
+        '''
+        find_info = Info.find_by_info_details(info_details)
+        return pyperclip.copy(finf_info.password)
+    
+    
