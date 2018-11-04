@@ -1,6 +1,6 @@
 import random  
 from user import User, Info
-# import pyperclip
+import pyperclip
 
 def register_user(username, password):
     '''
@@ -90,15 +90,16 @@ def main():
                         account_name = input("Enter account name : \n")
                         info_details = input("Enter the site name : \n")
                         password = input("Enter password for site: \n")
-                    save_info(create_info(username,account_name,info_details, password))
-                    print("\n")
-                    print("Credentials created successfully.")
+                        save_info(create_info(username,account_name,info_details, password))
+                        print("\n")
+                        print("Credentials created successfully.")
                     
                     elif user_Choice == "2":
                         print("\n")
-                        print("**"*500)
+                        print("**"*50)
                         choosen_info = input("Enter the site account to copy your info from. \n")
                         copy_info(choosen_info)
+                        print("Successfully copied!")
                         print("\n")
                     
                     else:
