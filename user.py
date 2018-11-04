@@ -8,4 +8,7 @@ class User:
     """
     info_list = [] #empty info list
     user_list = [] #Empty user list
-    
+    #this are instance variables
+    def __init__(self,username,password):
+        self.username = username
+        self.password = password
