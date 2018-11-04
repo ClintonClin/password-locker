@@ -22,3 +22,9 @@ def create_info(username_name, account_name, info_details, password)
     new_info = Info(username_name,account_name, info_details, password)
     return new_info
     
+def save_info(info)
+    '''
+    function to save new info inputed by the user
+    '''
+    Info.save_info(info)
+
