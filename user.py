@@ -29,3 +29,10 @@ class Info:
         self.account_name = account_name
         self.info_details = info_details
         self.password = password
+
+    def save_info(self)
+        '''
+        created a function to new info of a user
+        '''
+        Info.info_list.append(self)
+        
