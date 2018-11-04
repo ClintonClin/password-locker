@@ -8,4 +8,9 @@ def register_user(username, password)
     '''
     new_user = User(username, password)
     return new_user
-    
+
+def save_user(user)
+    '''
+    Created a user function to save the new user
+    '''
+    User.save_user(user)
