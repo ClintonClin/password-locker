@@ -34,6 +34,23 @@ def clipboard_info():
     '''
     return Info.clipboard_info(info_details)
 
+def main():
+    print("**"*30)
+    print("Choose one option below \n 1. Create account \n 2. sign in \n 3. quit \n")
+    choice = input()
+    if input == "3":
+        break
 
+    elif input == "1":
+        print("**"*30)
+        print("Create a new account")
+        print ("\n")
+        username = input('Create a username')
+        password= input("Create password")
+        save_user(register_user(username, password))
+        print(f"Created account for {username} with password as {password}")
+
+    
+        
 
 
