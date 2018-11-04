@@ -63,6 +63,31 @@ def main():
         print("Log in by entering your account credentials")
         username = ("Enter your username")
         password = ("Enter your password")
+        user_exist = check_user(username, password)
+            if user_exist == username :
+                print ("\n")
+                print("Welcome to password Locker")
+                while True:
+                    print("**"*30)
+                    print("Choose an option")
+                    print("1. Create login information \n 2. copy login infomation \n 3. Exit ")
+                    user_Choice = input("Enter choice : ")
+                    if user_Choice == "3":
+                        print(f'Goodbye {username}')
+                        sys.exit()
+                    elif user_Choice == "1":
+                        print("\n")
+                        print("Enter your infomation")
+                        account_name = input("Enter account name")
+                        info_details = input("Enter the site name")
+                        password = input("Enter password for site")
+                save_info(create_info(username,account_name,info_details, password))
+                print("\n")
+                print("Credentials created successfully.")
+
+
+
+                        
 
 
 
